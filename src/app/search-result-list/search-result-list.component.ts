@@ -30,7 +30,6 @@ export class SearchResultListComponent implements OnInit, OnDestroy {
       if (!pagedData) {
         return;
       }
-      console.log('IM HERE');
       this.page.totalElements = pagedData.ftpFilesCount;
       this.ftpFilesResult = pagedData.ftpFiles;
     });
