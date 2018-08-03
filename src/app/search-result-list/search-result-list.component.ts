@@ -27,7 +27,7 @@ export class SearchResultListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.onSearch = this.api.onSearch.subscribe(pagedData => {
-      if (!pagedData) {
+      if (!pagedData) { // To avoid BehaviorSubkect Initialization
         return;
       }
       this.page.totalElements = pagedData.ftpFilesCount;
