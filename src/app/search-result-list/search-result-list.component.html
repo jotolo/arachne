@@ -1,3 +1,18 @@
-<div class="d-flex flex-wrap justify-content-around align-items-center align-content-around m-4">
+<!-- <div class="d-flex flex-wrap justify-content-around align-items-center align-content-around m-4">
     <app-search-result-element *ngFor="let ftpFile of ftpFilesResult" [ftpResult]="ftpFile" style="width: 20%;"></app-search-result-element>
-</div>
+</div> -->
+
+<ngx-datatable [rows]="ftpFilesResult" [externalPaging]="true" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
+    [rowHeight]="'auto'" [count]="page.totalElements" [offset]="page.pageNumber" [limit]="page.size" (page)='setPage($event)'
+    class="material">
+    <ngx-datatable-column [name]="'Name'" [prop]="'name'"></ngx-datatable-column>
+    <ngx-datatable-column [name]="'Date'" [prop]="'createdAt'"></ngx-datatable-column>
+    <ngx-datatable-column [name]="'Link'" [cellTemplate]="linkTemplate"></ngx-datatable-column>
+</ngx-datatable>
+
+<ng-template #linkTemplate let-row="row">
+    <a href="{{row.getFullAddress()}}" class="btn btn-primary btn-sm">
+        <fa-icon [icon]="faFileDownload"></fa-icon>
+        Download
+    </a>
+</ng-template>

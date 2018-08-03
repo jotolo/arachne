@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { HttpClientModule } from '@angular/common/http';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 
 import { SearchResultListComponent } from './search-result-list/search-result-list.component';
@@ -22,6 +23,7 @@ import { ArachneApiService } from './services/arachne-api.service';
   ],
   imports: [
     NgbModule.forRoot(),
+    NgxDatatableModule,
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,

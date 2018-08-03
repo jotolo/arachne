@@ -17,12 +17,7 @@ export class AppComponent {
 
   search(query: HTMLInputElement): boolean {
     console.log(query.value);
-    this.api.search(query.value, 1, 25)
-      .subscribe(
-        apiItems => {
-          this.ftpFiles = apiItems;
-        }
-      );
+    this.api.search(query.value, 1, 25).subscribe();
     return false;
   }
 }
