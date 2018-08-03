@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FtpFile } from '../models/ftp-file';
 import { ArachneApiService } from '../services/arachne-api.service';
 
@@ -9,18 +9,11 @@ import { ArachneApiService } from '../services/arachne-api.service';
 })
 export class SearchResultListComponent implements OnInit {
 
-  ftpFiles: any;
+  @Input() ftpFilesResult: FtpFile[];
 
   constructor(private api: ArachneApiService) {
   }
 
-  ngOnInit() {
-    this.api.search('mic', 1, 25)
-      .subscribe(
-        apiItems => {
-          this.ftpFiles = apiItems;
-        }
-      );
-  }
+  ngOnInit() { }
 
 }

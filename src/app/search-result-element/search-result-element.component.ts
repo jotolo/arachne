@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FtpFile } from '../models/ftp-file';
-import { faFile } from '@fortawesome/free-solid-svg-icons';
+import { faFileDownload } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-search-result-element',
@@ -9,7 +9,7 @@ import { faFile } from '@fortawesome/free-solid-svg-icons';
 })
 export class SearchResultElementComponent implements OnInit {
   @Input() ftpResult: FtpFile;
-  faFile = faFile;
+  faFileDownload = faFileDownload;
   constructor() { }
 
   ngOnInit() {

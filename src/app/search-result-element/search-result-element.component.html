@@ -1,6 +1,10 @@
-<div class="d-flex align-items-center m-1" title="{{ftpResult.name}}">
-  <fa-icon [icon]="faFile" class="mr-1"></fa-icon>
-  <a href="{{getFullAddress()}}" target="_blank" class="text-tuncrate">
-    <span>{{ftpResult.name}}</span>
-  </a>
+<div class="card" style="width: 17rem; flex-grow: 1;" title="{{ftpResult.name}}">
+  <div class="card-body">
+    <h5 class="card-title">{{ftpResult.name}}</h5>
+    <p class="card-text text-tuncrate">{{ftpResult.created_at | date: 'dd/MM/yyyy'}}</p>
+    <a href="{{getFullAddress()}}" class="btn btn-primary">
+      <fa-icon [icon]="faFileDownload"></fa-icon>
+      Download
+    </a>
+  </div>
 </div>
